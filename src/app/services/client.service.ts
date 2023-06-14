@@ -170,5 +170,14 @@ export class ClientService {
     )
   }
 
+  sendPayment(paymentInfo: any){
+    return this.httpClient.post<any>(`${environment.clientServiceURL}/api/payment/makePayment`,
+      paymentInfo, {
+        headers: this.headers,
+        responseType: 'text' as 'json'
+      }
+    )
+  }
+
 
 }
